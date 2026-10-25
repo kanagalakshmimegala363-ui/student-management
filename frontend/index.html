@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main class="container">
+        <div class="content-grid">
+
+            <section class="panel" id="student-form">
+                <h2 id="formTitle">Add Student</h2>
+                <p class="description">Enter student details below.</p>
+
+                <form id="studentForm">
+                    <input type="hidden" id="studentId">
+
+                    <label for="name">Name</label>
+                    <input id="name" type="text" placeholder="Enter name" required>
+
+                    <label for="email">Email</label>
+                    <input id="email" type="email" placeholder="Enter email" required>
+
+                    <label for="course">Course</label>
+                    <input id="course" type="text" placeholder="Enter course" required>
+
+                    <label for="age">Age</label>
+                    <input id="age" type="number" min="1" max="120"
+                           placeholder="Enter age" required>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn primary" id="saveButton">
+                            Add Student
+                        </button>
+                        <button type="button" class="btn secondary"
+                                id="cancelButton" hidden>
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="panel" id="student-records">
+                <div class="records-heading">
+                    <div>
+                        <h2>Student Records</h2>
+                        <p class="description">
+                            View, search, edit, and delete students.
+                        </p>
+                    </div>
+                    <span id="recordCount" class="record-count">0 records</span>
+                </div>
+
+                <div class="search-row">
+                    <input id="searchInput" type="search"
+                           placeholder="Search students...">
+                    <button type="button" class="btn secondary" id="refreshButton">
+                        Refresh
+                    </button>
+                </div>
+
+                <div id="message" class="message" role="status"
+                     aria-live="polite" hidden></div>
+
+                <p id="loading" class="loading" hidden>Loading students...</p>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Student</th>
+                                <th>Course</th>
+                                <th>Age</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentList">
+                            <tr>
+                                <td colspan="4" class="empty">Loading students...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p id="tableSummary" class="table-footer">Student records</p>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="./app.js"></script>
+</body>
+</html>
+
+
+
+
+
+

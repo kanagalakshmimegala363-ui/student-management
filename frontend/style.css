@@ -1,0 +1,317 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px;
+    background: #f5f7fa;
+    color: #202938;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 22px;
+    align-items: start;
+}
+
+.panel {
+    min-width: 0;
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #e0e5ec;
+    border-radius: 10px;
+}
+
+h2 {
+    margin: 0 0 10px;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.description {
+    margin: 0 0 22px;
+    color: #697586;
+    line-height: 1.5;
+}
+
+label {
+    display: block;
+    margin: 16px 0 7px;
+    font-weight: 600;
+    color: #374151;
+}
+
+input {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 11px 12px;
+    border: 1px solid #d5dbe4;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #202938;
+    font: inherit;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3478f6;
+    box-shadow: 0 0 0 2px #3478f61a;
+}
+
+input::placeholder {
+    color: #9aa3b2;
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.btn {
+    padding: 10px 14px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.primary {
+    background: #2864dc;
+    color: #ffffff;
+}
+
+.primary:hover:not(:disabled) {
+    background: #1e50b5;
+}
+
+.secondary {
+    background: #ffffff;
+    border-color: #d5dbe4;
+    color: #374151;
+}
+
+.secondary:hover:not(:disabled) {
+    background: #f3f5f8;
+}
+
+.records-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.records-heading .description {
+    margin-bottom: 0;
+}
+
+.record-count {
+    flex-shrink: 0;
+    padding: 6px 9px;
+    background: #f0f4ff;
+    color: #2859b8;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.search-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.search-row input {
+    flex: 1;
+}
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #e0e5ec;
+    border-radius: 6px;
+}
+
+table {
+    width: 100%;
+    min-width: 520px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+thead {
+    background: #f6f8fb;
+}
+
+th {
+    padding: 13px;
+    color: #596579;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 13px;
+    border-top: 1px solid #e9edf2;
+    color: #374151;
+    vertical-align: middle;
+}
+
+tbody tr:hover {
+    background: #fafbfd;
+}
+
+.student-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 160px;
+}
+
+.avatar {
+    display: flex;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #edf2ff;
+    color: #2859b8;
+    font-weight: 700;
+}
+
+.student-name {
+    color: #202938;
+    font-weight: 600;
+}
+
+.student-email {
+    margin-top: 4px;
+    color: #697586;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.course-tag {
+    color: #374151;
+}
+
+.actions {
+    display: flex;
+    gap: 6px;
+}
+
+.actions .btn {
+    padding: 7px 9px;
+    font-size: 12px;
+}
+
+.btn-edit {
+    background: #eef4ff;
+    border-color: #d8e5ff;
+    color: #2859b8;
+}
+
+.btn-delete {
+    background: #fff1f2;
+    border-color: #ffd9df;
+    color: #c52d43;
+}
+
+.btn-edit:hover {
+    background: #dfeaff;
+}
+
+.btn-delete:hover {
+    background: #ffe1e5;
+}
+
+.empty {
+    padding: 28px;
+    color: #697586;
+    text-align: center;
+}
+
+.table-footer {
+    margin: 15px 0 0;
+    color: #697586;
+    font-size: 12px;
+}
+
+.message {
+    margin-bottom: 14px;
+    padding: 11px 12px;
+    border-radius: 6px;
+    overflow-wrap: anywhere;
+}
+
+.message.success {
+    background: #edf9f0;
+    color: #176c35;
+}
+
+.message.error {
+    background: #fff0f0;
+    color: #b42332;
+}
+
+.loading {
+    color: #2859b8;
+}
+
+@media (max-width: 900px) {
+    body {
+        padding: 18px;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    body {
+        padding: 10px;
+    }
+
+    .panel {
+        padding: 16px;
+    }
+
+    .records-heading {
+        flex-direction: column;
+    }
+
+    .search-row {
+        flex-direction: column;
+    }
+
+    .search-row .btn {
+        align-self: flex-start;
+    }
+}
