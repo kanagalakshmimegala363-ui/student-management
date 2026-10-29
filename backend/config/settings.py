@@ -15,13 +15,12 @@ DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
 DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
+DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
+
 ALLOWED_HOSTS = [
-    host.strip()
-    for host in os.environ.get(
-        "ALLOWED_HOSTS",
-        "127.0.0.1,localhost,student-management-gv2c.vercel.app"
-    ).split(",")
-    if host.strip()
+    "localhost",
+    "127.0.0.1",
+    ".vercel.app",
 ]
 
 INSTALLED_APPS = [
