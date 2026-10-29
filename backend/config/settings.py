@@ -16,10 +16,11 @@ DEBUG = os.getenv("DEBUG", "True").lower() == "true"
 ALLOWED_HOSTS = [
     host.strip()
     for host in os.getenv(
-        "ALLOWED_HOSTS", "127.0.0.1,localhost"
+        "ALLOWED_HOSTS", "127.0.0.1,localhost,.vercel.app"
     ).split(",")
     if host.strip()
 ]
+
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -100,6 +101,7 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = "static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CORS_ALLOWED_ORIGINS = [
     origin.strip()
