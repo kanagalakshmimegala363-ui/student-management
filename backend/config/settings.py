@@ -13,14 +13,10 @@ SECRET_KEY = os.getenv(
 )
 DEBUG = os.getenv("DEBUG", "True").lower() == "true"
 
-ALLOWED_HOSTS = [
-    host.strip()
-    for host in os.getenv(
-        "ALLOWED_HOSTS", "127.0.0.1,localhost,.vercel.app"
-    ).split(",")
-    if host.strip()
-]
-
+ALLOWED_HOSTS = os.environ.get(
+    "ALLOWED_HOSTS",
+    "localhost,127.0.0.1"
+).split(",")
 
 INSTALLED_APPS = [
     "django.contrib.admin",
