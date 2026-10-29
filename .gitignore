@@ -12,10 +12,18 @@ venv.bak/
 *.sqlite3
 db.sqlite3-journal
 
-# Environment variables & secrets
+# Environment variables & secrets (NEVER commit secrets)
 .env
-.env.local
-.env.*.local
+.env.*
+*.env
+**/.env
+**/config/.env
+!.env.example
+
+# Certificates & Keys
+*.pem
+*.key
+certs/
 
 # IDEs and Editors
 .vscode/

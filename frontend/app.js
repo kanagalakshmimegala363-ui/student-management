@@ -1,5 +1,17 @@
 
-const API_URL = "http://127.0.0.1:8000/api/students/";
+const LOCAL_API_URL =
+    "http://127.0.0.1:8000/api/students/";
+
+const PRODUCTION_API_URL =
+    "https://YOUR-BACKEND.vercel.app/api/students/";
+
+const isLocal =
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1";
+
+const API_URL = isLocal
+    ? LOCAL_API_URL
+    : PRODUCTION_API_URL;
 
 const form = document.getElementById("studentForm");
 const idInput = document.getElementById("studentId");
